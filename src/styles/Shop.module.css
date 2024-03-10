@@ -1,0 +1,30 @@
+.slideshow {
+    max-width: 100%;
+    max-height: 55vh;
+    margin-top: -4%;
+    display: inline-flex;
+    align-items: center;
+    overflow: hidden;
+}
+.slideshowImage {
+	min-width: 88%;
+    width: 88%;
+	border: 5px solid #FFFFFF;
+	display: flex;
+	justify-content: center;
+}
+    .slideshowImage:hover {
+        cursor: pointer;
+    }
+.category {
+    width: 100%;
+    font-size: 225%;
+    font-family: OpenSauce Bold;
+}
+.products {
+    width: 100%;
+    display: grid;
+    grid-column-gap: 5%;
+    grid-row-gap: 5%;
+    grid-template-columns: repeat(3, 30%);
+}
