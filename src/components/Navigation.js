@@ -53,14 +53,11 @@ function openMenu() {
     } else {
         menu.style.display = 'none'
     }
-    console.log('open menu')
 }
 
 function Navbar() {
     const router = useRouter()
     const {width, height} = useWindowSize()
-    var menu = document.getElementById('menu')
-    menu.style.display = 'none'
     const soles = {
         pathname: '/shop/[category]',
         query: {category: 'outsoles'}
@@ -69,7 +66,6 @@ function Navbar() {
         pathname: '/shop/[category]',
         query: {category: 'kits'}
     }
-    console.log(width, height)
     if (width < 700) {
         return (
             <div className={styles.navbar}>
