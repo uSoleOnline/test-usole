@@ -16,10 +16,11 @@
 }
 .menu {
     background-color: #000000;
-    position: fixed;
-    min-width: 225px;
-    width: 40%;
+    display: none;
+    width: 250px;
     height: 100%;
+    position: fixed;
+    top: 9%; 
 }
 .navButton {
     background-color: transparent;
