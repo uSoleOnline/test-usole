@@ -29,47 +29,45 @@
     .annoucement:hover {
         cursor: pointer;
     }
-.section {
-    width: 100%;
-    padding: 4%;
-    padding-left: 8%;
-    padding-right: 8%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
 .sectionImage {
     width: 40%;
     margin: 50px;
 }
 .heading {
     background-color: #000000;
-    min-width: 325px;
-    padding: 15px;
-    padding-left: 50px;
-    padding-right: 50px;
+    padding: 3.5%;
     color: #FFFFFF;
     font-family: OpenSauce Bold;
-    font-size: 150%;
+    font-size: 1.75vw;
     text-transform: capitalize;
     text-align: center;
     align-self: center;
 }
 .header {
-    width: 100%;
-    margin: 0px;
-    margin-bottom: 30px;
+    width: fit-content;
+    margin: 0;
     font-family: Lovelo;
     font-weight: 900;
-    font-size: 450%;
-    text-align: center;
+    font-size: 6vw;
+    border-bottom: 1.125vw solid #00C455;
 }
 .description {
     font-family: OpenSauce;
-    font-size: 125%;
-    line-height: 48px;
+    font-size: 1.45vw;
+    line-height: 3.5vw;
     text-align: center;
+}
+@media (max-width: 700px) {
+    .header {
+        font-size: 8.75vw;
+    }
+    .heading {
+        font-size: 3.5vw;
+    }
+    .description {
+        font-size: 3.25vw;
+        line-height: 7vw;
+    }
 }
 .button {
     background-color: #000000;

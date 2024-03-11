@@ -76,7 +76,7 @@ function Navbar() {
                         layout='intrinsic'
                         src='/icons/menu.svg'
                         alt='menu'
-                        style={{objectFit: 'contain', position: 'absolute', left: '30px', cursor: 'pointer'}}
+                        style={{objectFit: 'contain', position: 'absolute', left: '5%', cursor: 'pointer'}}
                     />
                 </button>
                 <button className={styles.logo} onClick={() => router.push(('/home'))}>

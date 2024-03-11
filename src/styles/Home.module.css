@@ -7,7 +7,7 @@
     color: #FFFFFF;
     margin: 0px;
     margin-left: 6%;
-    font-size: 2.5vw;
+    font-size: 3vw;
     font-family: OpenSauce Black;
 }
 .title {
@@ -33,16 +33,39 @@
     text-align: left;
 }
 .block {
-    padding: 4.5%;
+    width: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: center;
     column-gap: 10%;
+    justify-content: space-evenly;
 }
-.section {
+.blockSection {
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: center;
+}
+.section {
+    background-color: #FFFFFF;
+    color: #000000;
+    width: 100%;
+    padding: 8%;
+    text-align: center;
+}
+@media (max-width: 700px) {
+    .section {
+        padding: 14%;
+    }
+    .block {
+        width: 100%;
+        flex-direction: column;
+    }
+    .blockSection {
+        margin-top: 16%;
+    }
+        .blockSection:first-of-type {
+            margin-top: 6%;
+        }
 }

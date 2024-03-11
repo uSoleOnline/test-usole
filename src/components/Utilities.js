@@ -37,75 +37,6 @@ export function Annoucement({ location, children }) {
     )
 }
 
-export function Section({ orient='center', img='', background='#FFFFFF', newstyle, children }) {
-    if (orient == 'center' && img == '') {
-        return (
-            <div className={styles.section} style={{backgroundColor: background, color: background == '#000000' && '#FFFFFF'}}>
-                <div style={{display: 'flex', flexDirection: 'column', width: '100%'}}>
-                    {children}
-                </div>
-            </div>
-        )
-    } else if (orient == 'center' && img != '') {
-        return (
-            <div className={styles.section} style={{backgroundColor: background, color: background == '#000000' && '#FFFFFF'}}>
-                <div className={styles.sectionImage} style={{width: '90%'}}>
-                    <Image
-                        priority
-                        width={250}
-                        height={500}
-                        layout='intrinsic'
-                        src={img}
-                        alt='image'
-                        style={{width: '100%', objectFit: 'cover'}}
-                    />
-                </div>
-                <div style={{display: 'flex', flexDirection: 'column'}}>
-                    {children}
-                </div>
-            </div>
-        )
-    } else if (orient == 'left') {
-        return (
-            <div className={styles.section} style={{backgroundColor: background, color: background == '#000000' && '#FFFFFF'}}>
-                <div style={{width: '45%', textAlign: 'center'}}>
-                    {children}
-                </div>
-                <div className={styles.sectionImage} style={{marginLeft: '10%', marginRight: '0px'}}>
-                    <Image
-                        priority
-                        width={250}
-                        height={500}
-                        layout='intrinsic'
-                        src={img}
-                        alt='image'
-                        style={{width: '100%', objectFit: 'cover'}}
-                    />
-                </div>
-            </div>
-        )
-    } else if (orient == 'right') {
-        return (
-            <div className={styles.section}  style={{...{backgroundColor: background, color: background == '#000000' && '#FFFFFF'}, ...newstyle}}>
-                <div className={styles.sectionImage} style={{marginRight: '10%', marginLeft: '0px'}}>
-                    <Image
-                        priority
-                        width={250}
-                        height={500}
-                        layout='intrinsic'
-                        src={img}
-                        alt='image'
-                        style={{width: '100%', objectFit: 'cover'}}
-                    />
-                </div>
-                <div style={{width: '45%', textAlign: 'center'}}>
-                    {children}
-                </div>
-            </div>
-        )
-    }
-}
-
 function SliderImage({ src }) {
     return (
         <div className={styles.sliderImage}>
@@ -204,7 +135,9 @@ export function Description({ children, style }) {
 
 export function Header({ children, style }) {
     return (
-        <p className={styles.header} style={style}>{children}</p>
+        <div style={{display: 'flex', width: '100%', marginBottom: '7%', justifyContent: 'center'}}>
+            <p className={styles.header} style={style}>{children}</p>
+        </div>
     )
 }
 

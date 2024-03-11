@@ -1,15 +1,11 @@
 import styles from '@/styles/Home.module.css'
 import Layout from '../components/Layout'
 import Image from 'next/image'
-import { Section, Slider, Header, Heading, Description, Button } from '../components/Utilities'
+import { Slider, Header, Heading, Description, Button } from '../components/Utilities'
 import { useRouter } from 'next/router'
 
 function Home() {
     const router = useRouter()
-    const newstyle = {
-        paddingTop: '0px',
-        marginTop: '-75px'
-    }
     return (
         <Layout title=''>
             <div style={{position: 'absolute', width: '100%', height: '100%'}}>
@@ -26,7 +22,24 @@ function Home() {
             <div className={styles.cover}>
                 <p className={styles.caption}>Our mission</p>
                 <p className={styles.title}>Protect the earth</p>
-                <p className={styles.subtitle}>one eco-friendly shoe sole at a time.</p>
+                <p className={styles.subtitle}>one <span style={{color: '#00C455'}}>eco-friendly</span> shoe sole at a time.</p>
+            </div>
+            <div className={styles.section}>
+                <Header>The product</Header>
+                <div className={styles.block}>
+                    <div className={styles.blockSection}>
+                        <Heading style={{width: '80%'}}>Shoe outsole</Heading>
+                        <Description>
+                            Purchase a variety of shoe soles designed for specific brand models, all 3D printed using flexible, <span style={{color: '#00C455', textDecoration: 'underline'}}>biodegradable</span> material, and guaranteed to improve performance.
+                        </Description>
+                    </div>
+                    <div className={styles.blockSection}>
+                        <Heading style={{width: '80%'}}>Assembly kit</Heading>
+                        <Description>
+                            Select <span style={{color: '#00C455', textDecoration: 'underline'}}>affordable</span> kits to assemble the soles to your worn-out shoes. Featuring a sanding tool, adhesive, and complementary outsole, it has all you need for success.
+                        </Description>
+                    </div>
+                </div>
             </div>
         </Layout>
     )
