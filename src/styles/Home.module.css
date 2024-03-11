@@ -1,39 +1,35 @@
 .cover {
-    background-color: #000000;
-    border: none;
-    margin-bottom: -5px;
+    position: relative;
+    top: 24vh;
 }
 .caption {
     color: #FFFFFF;
-    font-size: 200%;
+    margin: 0px;
+    margin-left: 6%;
+    font-size: 2.5vw;
     font-family: OpenSauce Black;
-    position: relative;
-    top: 200px;
-    left: 6%;
 }
 .title {
-    width: 80%;
     color: #FFFFFF;
-    font-size: 1162.5%;
+    width: 80%;
+    margin: 0px;
+    margin-left: 5%;
+    font-size: 13.5vw;
     font-family: Lovelo;
     font-weight: 900;
     text-align: left;
-    line-height: 245px;
-    position: relative;
-    top: 0px;
-    left: 5%;
+    line-height: 18vw;
 }
 .subtitle {
-    width: 80%;
     color: #FFFFFF;
-    font-size: 600%;
+    width: 80%;
+    margin: 0px;
+    margin-left: 5%;
+    font-size: 7.25vw;
     font-family: OpenSauce Bold;
     font-weight: 900;
-    line-height: 164px;
+    line-height: 12.5vw;
     text-align: left;
-    position: relative;
-    top: -125px;
-    left: 5%;
 }
 .block {
     padding: 4.5%;

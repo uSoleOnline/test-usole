@@ -12,7 +12,22 @@ function Home() {
     }
     return (
         <Layout title=''>
-           <div>Index</div>
+            <div style={{position: 'absolute', width: '100%', height: '100%'}}>
+                <Image
+                    priority
+                    width={250}
+                    height={500}
+                    layout='intrinsic'
+                    src='/covers/cover002.jpg'
+                    alt='image'
+                    style={{width: '100%', objectFit: 'cover', filter: 'brightness(50%)'}}
+                />
+            </div>
+            <div className={styles.cover}>
+                <p className={styles.caption}>Our mission</p>
+                <p className={styles.title}>Protect the earth</p>
+                <p className={styles.subtitle}>one eco-friendly shoe sole at a time.</p>
+            </div>
         </Layout>
     )
 }
