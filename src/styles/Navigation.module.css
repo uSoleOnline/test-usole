@@ -118,4 +118,6 @@
     color: #FFFFFF;
     display: flex;
     justify-content: space-between;
+    position: relative;
+    bottom: 0;
 }
