@@ -4,18 +4,63 @@ import Image from 'next/image'
 import useWindowSize from './useWindowSize'
 // import { Description } from './Utilities'
 
-function NavButton({ text, location }) {
+function NavButton({ text, location, style={} }) {
     const router = useRouter()
     return (
-        <button className={styles.navButton} onClick={() => router.push((location))}>
+        <button className={styles.navButton} style={style} onClick={() => router.push((location))}>
             {text}
         </button>
     )
 }
 
+export function Menu() {
+    const soles = {
+        pathname: '/shop/[category]',
+        query: {category: 'outsoles'}
+    }
+    const kits = {
+        pathname: '/shop/[category]',
+        query: {category: 'kits'}
+    }
+    const menuButton = {
+        width: '100%',
+        height: '55px',
+        paddingLeft: '30px',
+        textAlign: 'left',
+        textDecoration: 'underline'
+    }
+    const menuButtonTab = {
+        ...menuButton,
+        paddingLeft: '55px',
+        textDecoration: 'none'
+    }
+    return (
+        <div className={styles.menu} id='menu'>
+            <NavButton style={menuButton} text='About' location='/aboutUs'/>
+            <NavButton style={menuButtonTab} text='Mission' location='/'/>
+            <NavButton style={menuButtonTab} text='Impact' location='/impact'/>
+            <NavButton style={menuButton} text='Shop' location='/shop'/>
+            <NavButton style={menuButtonTab} text='Outsoles' location={soles}/>
+            <NavButton style={menuButtonTab} text='Kits' location={kits}/>
+        </div>
+    )
+}
+
+function openMenu() {
+    var menu = document.getElementById('menu')
+    if (menu.style.display == 'none') {
+        menu.style.display = 'block'
+    } else {
+        menu.style.display = 'none'
+    }
+    console.log('open menu')
+}
+
 function Navbar() {
     const router = useRouter()
     const {width, height} = useWindowSize()
+    var menu = document.getElementById('menu')
+    menu.style.display = 'none'
     const soles = {
         pathname: '/shop/[category]',
         query: {category: 'outsoles'}
@@ -28,14 +73,16 @@ function Navbar() {
     if (width < 700) {
         return (
             <div className={styles.navbar}>
-                <Image
-                    width={30}
-                    height={30}
-                    layout='intrinsic'
-                    src='/icons/menu.svg'
-                    alt='menu'
-                    style={{objectFit: 'contain', position: 'absolute', left: '20px'}}
-                />
+                <button className={styles.logo} onClick={() => openMenu()}>
+                    <Image
+                        width={30}
+                        height={30}
+                        layout='intrinsic'
+                        src='/icons/menu.svg'
+                        alt='menu'
+                        style={{objectFit: 'contain', position: 'absolute', left: '30px', cursor: 'pointer'}}
+                    />
+                </button>
                 <button className={styles.logo} onClick={() => router.push(('/home'))}>
                     <Image
                         priority

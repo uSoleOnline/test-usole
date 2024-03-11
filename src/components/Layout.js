@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import Navbar from '../components/Navigation'
-import { Sidebar } from '../components/Navigation'
-import { Footer } from '../components/Navigation'
+import { Menu, Sidebar, Footer } from '../components/Navigation'
 import styles from '../styles/Layout.module.css'
 
 function Layout({ title, children}) {
@@ -11,6 +10,7 @@ function Layout({ title, children}) {
                 <title>{title ? title + " | " : ""} uSole</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
+            <Menu/>
             <Navbar/>
             <div className={styles.main}>
                 {children}
