@@ -37,6 +37,9 @@
     .navButton:hover {
         color: #00C455;
     }
+    .text:hover {
+        border-bottom: 4.5px solid #00C455;
+    }
 .logo {
     background-color: transparent;
     height: 30px;

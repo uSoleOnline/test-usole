@@ -2,13 +2,12 @@ import styles from '../styles/Navigation.module.css'
 import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 import useWindowSize from './useWindowSize'
-// import { Description } from './Utilities'
 
 function NavButton({ text, location, style={} }) {
     const router = useRouter()
     return (
         <button className={styles.navButton} style={style} onClick={() => router.push((location))}>
-            {text}
+            <span className={styles.text}>{text}</span>
         </button>
     )
 }
@@ -26,22 +25,16 @@ export function Menu() {
         width: '100%',
         height: '55px',
         paddingLeft: '30px',
-        textAlign: 'left',
-        textDecoration: 'underline'
-    }
-    const menuButtonTab = {
-        ...menuButton,
-        paddingLeft: '55px',
-        textDecoration: 'none'
+        textAlign: 'left'
     }
     return (
         <div className={styles.menu} id='menu'>
             <NavButton style={menuButton} text='About' location='/aboutUs'/>
-            <NavButton style={menuButtonTab} text='Mission' location='/'/>
-            <NavButton style={menuButtonTab} text='Impact' location='/impact'/>
+            <NavButton style={menuButton} text='Mission' location='/mission'/>
+            <NavButton style={menuButton} text='Impact' location='/impact'/>
             <NavButton style={menuButton} text='Shop' location='/shop'/>
-            <NavButton style={menuButtonTab} text='Outsoles' location={soles}/>
-            <NavButton style={menuButtonTab} text='Kits' location={kits}/>
+            <NavButton style={menuButton} text='Outsoles' location={soles}/>
+            <NavButton style={menuButton} text='Kits' location={kits}/>
         </div>
     )
 }
@@ -57,7 +50,7 @@ function openMenu() {
 
 function Navbar() {
     const router = useRouter()
-    const {width, height} = useWindowSize()
+    const {width} = useWindowSize()
     const soles = {
         pathname: '/shop/[category]',
         query: {category: 'outsoles'}
@@ -97,7 +90,7 @@ function Navbar() {
             <div className={styles.navbar}>
                 <div className={styles.section} style={{justifyContent: 'flex-start'}}>
                     <NavButton text='About' location='/aboutUs'/>
-                    <NavButton text='Mission' location='/'/>
+                    <NavButton text='Mission' location='/mission'/>
                     <NavButton text='Impact' location='/impact'/>
                 </div>
                 <div className={styles.section}>

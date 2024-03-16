@@ -3,7 +3,7 @@ import Navbar from '../components/Navigation'
 import { Menu, Sidebar, Footer } from '../components/Navigation'
 import styles from '../styles/Layout.module.css'
 
-function Layout({ title, children}) {
+function Layout({ title, style={}, children}) {
     return (
         <div>
             <Head>
@@ -12,7 +12,7 @@ function Layout({ title, children}) {
             </Head>
             <Menu/>
             <Navbar/>
-            <div className={styles.main}>
+            <div className={styles.main} style={style}>
                 {children}
             </div>
             <Footer/>
