@@ -42,7 +42,6 @@
     justify-content: space-evenly;
 }
 .blockSection {
-    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -54,9 +53,31 @@
     padding: 8%;
     text-align: center;
 }
+.imageSection {
+    background-color: #FFFFFF;
+    color: #000000;
+    width: 100%;
+    padding: 8%;
+    display: flex;
+    column-gap: 10%;
+    align-items: center;
+}
 @media (max-width: 700px) {
-    .section {
+    .caption {
+        font-size: 4vw;
+    }
+    .imageSection {
+        width: 100%;
         padding: 14%;
+        flex-direction: column;
+        row-gap: 75px;
+    }
+    .image {
+        width: 100%;
+    }
+    .section {
+        padding-top: 15%;
+        padding-bottom: 15%;
     }
     .block {
         width: 100%;
@@ -68,4 +89,5 @@
         .blockSection:first-of-type {
             margin-top: 6%;
         }
+    
 }

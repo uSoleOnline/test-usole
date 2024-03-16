@@ -1,6 +1,7 @@
 import styles from '../styles/Utilities.module.css'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
+import useWindowSize from './useWindowSize'
 
 function CoverImage({ src }) {
     return (
@@ -15,6 +16,24 @@ function CoverImage({ src }) {
                 style={{width: '100%', objectFit: 'cover'}}
             />
         </div>
+    )
+}
+
+export function SectionImage({ src, mobileWidth, webWidth }) {
+    const {width} = useWindowSize()
+    var imageWidth = webWidth
+    if (width < 700) {
+        imageWidth = mobileWidth
+    }
+    return (
+        <Image
+            width={250}
+            height={500}
+            layout='intrinsic'
+            src={src}
+            alt='image'
+            style={{width: imageWidth, objectFit: 'cover'}}
+        />
     )
 }
 
@@ -151,8 +170,10 @@ export function Heading({ children, style }) {
 
 export function Button({ children, onClick, style }) {
     return (
-        <button className={styles.button} style={style} onClick={onClick}>
-            {children}
-        </button>
+        <div style={{width: '100%', display: 'flex', justifyContent: 'center'}}>
+            <button className={styles.button} style={style} onClick={onClick}>
+                {children}
+            </button>
+        </div>
     )
 }

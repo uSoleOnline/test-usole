@@ -1,11 +1,14 @@
 import styles from '@/styles/Home.module.css'
 import Layout from '../components/Layout'
 import Image from 'next/image'
-import { Slider, Header, Heading, Description, Button } from '../components/Utilities'
+import { SectionImage, Header, Heading, Description, Button, Slider } from '../components/Utilities'
 import { useRouter } from 'next/router'
+import useWindowSize from '../components/useWindowSize'
 
 function Home() {
     const router = useRouter()
+    const {width} = useWindowSize()
+
     return (
         <Layout title=''>
             <div style={{position: 'absolute', width: '100%', height: '100%'}}>
@@ -40,6 +43,60 @@ function Home() {
                         </Description>
                     </div>
                 </div>
+            </div>
+            <div className={styles.imageSection} style={{backgroundColor: '#000000', color: '#FFFFFF'}}>
+                <SectionImage src='/product/sole005.gif' webWidth='90%' mobileWidth='100%'/>
+                <div style={{width: '100%'}}>
+                    <Header>The outsole</Header>
+                    <Description>
+                        uSole revolutionizes basketball footwear with replaceable outsoles crafted from bio-TPU, an eco-friendly and durable material. uSole employs a 95% ESTANE® ECO 12T90E 5% colophony split to enhance durability and improve performance.
+                    </Description>
+                    <Button style={{backgroundColor: '#FFFFFF', color: '#000000'}} onClick={() => router.push('/impact')}>
+                        Learn more
+                    </Button>
+                </div>
+            </div>
+            <div className={styles.imageSection}>
+                <div style={{width: '100%'}}>
+                    <Header>The DIY kit</Header>
+                    <Description>
+                        The uSole DIY kit allows anyone to revive their worn-out shoes for more use. The sanding apparatus is specifically designed to remove any unevenness in the remaining shoe sole, ensuring a seamless and secure bond using our specially formulated waterborne urethane adhesive.
+                    </Description>
+                    <Button onClick={() => router.push('/product')}>
+                        Learn more
+                    </Button>
+                </div>
+                <SectionImage src='/product/kit002.jpg' webWidth='90%' mobileWidth='100%'/>
+            </div>
+            <div className={styles.section} style={{backgroundColor: '#000000', color: '#FFFFFF'}}>
+                <Header>How to use</Header>
+                <Description>
+                    Read detailed instructions how to use the uSole Kit in five easy steps.
+                </Description>
+                <Button style={{backgroundColor: '#FFFFFF', color: '#000000'}} onClick={() => router.push('/impact')}>
+                    Learn more
+                </Button>
+            </div>
+            <div className={styles.imageSection}>
+                <div style={{width: '100%'}}>
+                    <Header>Protect<br/>our earth.</Header>
+                    <Description>
+                        All outsoles are 3D printed with bio-TPU, a biodegradable and sustainable filament that ensures minimal carbon footprint and an eco-friendly manufacturing process. 
+                    </Description>
+                    <Button onClick={() => router.push('/impact')}>
+                        Learn more
+                    </Button>
+                </div>
+                <SectionImage src='/product/kit003.jpg' webWidth='90%' mobileWidth='100%'/>
+            </div>
+            <div className={styles.section} style={{backgroundColor: '#000000', color: '#FFFFFF'}}>
+                <Header>Power {(width < 700) && <br/>} in every step.</Header>
+                <Description>
+                    Reach greater heights this New Year's with a curated collection of new,<br/>customizeable shoe soles for all of your favorite models.
+                </Description>
+                <Button style={{backgroundColor: '#FFFFFF', color: '#000000'}} onClick={() => router.push('/shop')}>
+                    Shop Now
+                </Button>
             </div>
         </Layout>
     )

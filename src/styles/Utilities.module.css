@@ -29,10 +29,6 @@
     .annoucement:hover {
         cursor: pointer;
     }
-.sectionImage {
-    width: 40%;
-    margin: 50px;
-}
 .heading {
     background-color: #000000;
     padding: 3.5%;
@@ -49,6 +45,7 @@
     font-family: Lovelo;
     font-weight: 900;
     font-size: 6vw;
+    text-align: center;
     border-bottom: 1.125vw solid #00C455;
 }
 .description {
@@ -56,6 +53,19 @@
     font-size: 1.45vw;
     line-height: 3.5vw;
     text-align: center;
+}
+.button {
+    background-color: #000000;
+    margin: 0px; 
+    padding: 15px;
+    padding-left: 25px;
+    padding-right: 25px;
+    border: none;
+    color: #FFFFFF;
+    font-family: OpenSauce;
+    font-size: 1.3vw;
+    text-align: center;
+    align-self: center;
 }
 @media (max-width: 700px) {
     .header {
@@ -68,19 +78,9 @@
         font-size: 3.25vw;
         line-height: 7vw;
     }
-}
-.button {
-    background-color: #000000;
-    margin-top: 35px;
-    padding: 15px;
-    padding-left: 25px;
-    padding-right: 25px;
-    border: none;
-    color: #FFFFFF;
-    font-family: OpenSauce;
-    font-size: 112.5%;
-    text-align: center;
-    align-self: center;
+    .button {
+        font-size: 2.75vw;
+    }
 }
 .slider {
     width: 100%;
